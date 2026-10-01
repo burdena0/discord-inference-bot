@@ -4,6 +4,8 @@ a self-hosted discord bot that uses [ollama](https://ollama.com) for local infer
 
 no paid inference api is required. you still need a discord bot token and a machine that can run your chosen models.
 
+intended for private discord servers only, with informed consent from all participants whose messages, images, or member information the bot processes. do not use it in public servers or to collect data from people who have not consented.
+
 ## features
 
 - streaming replies when mentioned, replied to, messaged directly, or enabled with `/autoreply`
@@ -112,7 +114,9 @@ the bot connects to discord and sends prompts to the configured ollama address. 
 
 `settings.json` contains settings, facts, trivia scores, and reminders. `metrics.csv` contains timing and model metrics. logs can contain operational details and errors. these files and `.env` are excluded from git.
 
-tell server members before indexing their history. avoid indexing sensitive channels. deletion events received while the bot is running remove messages from the index. deletions missed while it is offline are not reconciled automatically.
+use the bot only in private servers with informed consent from the participants. explain what it processes and stores, including messages, images, member information, saved facts, and indexed history. get consent before enabling it or indexing existing history, and stop processing a participant's data if they withdraw consent. this is an operator requirement; the bot does not enforce or track consent automatically.
+
+avoid indexing sensitive channels. deletion events received while the bot is running remove messages from the index. deletions missed while it is offline are not reconciled automatically.
 
 use `/index clear` to clear indexed messages and stop live indexing, `/forget` to remove facts, and `/reset` to clear recent chat memory. member records are separate. to remove all local data, stop the bot and delete `index.db`, any `index.db-*` sidecar files, `settings.json`, `metrics.csv`, and logs. this also removes settings and reminders.
 
