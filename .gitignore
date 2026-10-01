@@ -1,0 +1,12 @@
+.env
+.env.*
+!.env.example
+settings.json
+index.db
+index.db-*
+metrics.csv
+*.log
+__pycache__/
+*.py[cod]
+.venv/
+venv/
